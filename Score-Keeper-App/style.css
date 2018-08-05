@@ -1,3 +1,13 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.center-element {
+    margin: auto;
+    text-align: center;
+}
+
 .winner {
     color: green;
+    font-style: bold;
 }

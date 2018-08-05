@@ -15,7 +15,6 @@ var p1ScoreButton = document.querySelector('#player-1-add-score');
 p1ScoreButton.addEventListener('click', function() {
     if (!gameOver) {
         p1Score++;
-        console.log(p1Score, winningScore);
         if (p1Score === winningScore) {
             p1ScoreTally.classList.add('winner');
             gameOver = true;
@@ -41,6 +40,7 @@ resetButton.addEventListener('click', function() {
     reset();
 });
 
+// Changes the value of the "Playing to: " section
 numInput.addEventListener('change', function() {
     if (this.value < 0) {
         this.value = '0';
@@ -53,7 +53,8 @@ numInput.addEventListener('change', function() {
 /**
  * Reset Function
  * Resets the Scores and Winning Score Input.
- * Also sets the gameOver = False;
+ * Also sets the gameOver = False so that
+ * we could run all the code again.
  * @return {void}
  */
 function reset() {

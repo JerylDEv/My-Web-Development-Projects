@@ -8,39 +8,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 </head>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <h1 class="title">Score Keeper App</h1>
-            <section class="section">
-                <h1 class="is-size-1 content">
-                    <span id="player-1-score-display">0</span> to
-                    <span id="player-2-score-display">0</span>
-                </h1>
-                <p class="content">
-                    Playing to: <span id="number-of-play">5</span>
-                </p>
-                <p class="content">
-                    <input type="number" id="play-to-number" min="0">
-                </p>
-            </section>
+    <section class="container">
+
+        <section class="hero is-info is-warning is-bold">
+            <div class="hero-body is-centered">
+                <h1 class="title center-element">Score Keeper</h1>
+            </div>
+        </section>
+
+        <section class="section center-element">
+            <h1 class="is-size-1 content">
+                <span id="player-1-score-display">0</span> to
+                <span id="player-2-score-display">0</span>
+            </h1>
             <p class="content">
-                <button class="is-primary button" id="player-1-add-score">
-                    Player One
-                </button>
-                <button class="is-primary button" id="player-2-add-score">
-                    Player Two
-                </button>
+                Playing to:
+                <span id="number-of-play">5</span>
             </p>
             <p class="content">
-                <button class="is-danger button" id="reset-score">
-                    Reset
-                </button>
+                <input type="number" id="play-to-number" min="0">
             </p>
-        </div>
+        </section>
+
+        <p class="content center-element">
+            <button class="is-info button" id="player-1-add-score">
+                Player One
+            </button>
+            <button class="is-info button" id="player-2-add-score">
+                Player Two
+            </button>
+        </p>
+
+        <p class="content center-element">
+            <button class="is-danger button" id="reset-score">
+                Reset
+            </button>
+        </p>
+
     </section>
+
     <script type="text/javascript" src="main.js"></script>
 </body>
 
