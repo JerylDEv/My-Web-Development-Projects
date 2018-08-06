@@ -13,7 +13,7 @@ var winningScoreDisplay = document.querySelector('#number-of-play');
 
 var p1ScoreButton = document.querySelector('#player-1-add-score');
 p1ScoreButton.addEventListener('click', function() {
-    if (!gameOver) {
+    if (!gameOver && winningScore !== 0) {
         p1Score++;
         if (p1Score === winningScore) {
             p1ScoreTally.classList.add('winner');
@@ -25,7 +25,7 @@ p1ScoreButton.addEventListener('click', function() {
 
 var p2ScoreButton = document.querySelector('#player-2-add-score');
 p2ScoreButton.addEventListener('click', function() {
-    if (!gameOver) {
+    if (!gameOver && winningScore !== 0) {
         p2Score++;
         if (p2Score === winningScore) {
             p2ScoreTally.classList.add('winner');
@@ -40,10 +40,11 @@ resetButton.addEventListener('click', function() {
     reset();
 });
 
-// Changes the value of the "Playing to: " section
+// Changes the value of the "Best - Of - : " section
 numInput.addEventListener('change', function() {
     if (this.value < 0) {
         this.value = '0';
+        gameOver = true;
     }
     winningScoreDisplay.textContent = this.value;
     winningScore = Number(this.value);

@@ -10,4 +10,5 @@ body {
 .winner {
     color: green;
     font-style: bold;
+    -webkit-text-stroke: 2px gold;
 }
