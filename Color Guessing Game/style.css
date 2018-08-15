@@ -3,6 +3,15 @@ body {
     background-color: #373e48;
 }
 
+h1 {
+    color: white;
+    text-align: center;
+}
+
+span {
+    text-align: center;
+}
+
 #container {
     margin: 0 auto;
     max-width: 600px;
@@ -14,9 +23,15 @@ body {
     float: left;
     padding-bottom: 30%;
     margin: 1.66%;
+    border: 5%;
 }
 
-h1 {
-    color: white;
+#stripe {
+    background-color: white;
+    height: 30px;
     text-align: center;
+}
+
+#stripe>span {
+    color: black;
 }
