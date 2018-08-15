@@ -1,20 +1,77 @@
 body {
-    font-family: "Quicksand";
+    font-family: "Quicksand", sans-serif;
     background-color: #373e48;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+section {
+    background-color: coral;
 }
 
 h1 {
     color: white;
     text-align: center;
+    margin: 0;
+    font-weight: bolder;
+    text-transform: capitalize;
 }
 
 span {
     text-align: center;
 }
 
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    font-size: inherit;
+    border-radius: 12px;
+}
+
+section#header {
+    padding: 10px;
+    line-height: 2.5rem;
+}
+
+div#stripe {
+    margin: 0;
+    line-height: 2rem;
+    padding: 5px;
+}
+
 #container {
     margin: 0 auto;
     max-width: 600px;
+    padding: 5px;
+}
+
+#colorDisplay {
+    font-size: 150%;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#stripe {
+    background-color: white;
+    text-align: center;
+}
+
+#stripe>span {
+    color: black;
+}
+
+#message {
+    display: inline-block;
+    width: 50%;
+}
+
+.selected {
+    background-color: coral;
+    color: white;
 }
 
 .square {
@@ -23,19 +80,5 @@ span {
     float: left;
     padding-bottom: 30%;
     margin: 1.66%;
-    border: 5%;
-}
-
-#stripe {
-    background-color: white;
-    height: 30px;
-    text-align: center;
-}
-
-#stripe>span {
-    color: black;
-}
-
-.selected {
-    background-color: skyblue;
+    border-radius: 10%;
 }

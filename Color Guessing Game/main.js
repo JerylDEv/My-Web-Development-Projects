@@ -61,7 +61,7 @@ resetButton.addEventListener('click', function() {
         squares[i].style.backgroundColor = colors[i];
     }
     // Change the header section backgroundColor to Default
-    headerSection.style.backgroundColor = '#373e48';
+    headerSection.style.backgroundColor = 'coral';
     // Change the messageDisplay
     messageDisplay.textContent = '';
     // Set reset button back to default
