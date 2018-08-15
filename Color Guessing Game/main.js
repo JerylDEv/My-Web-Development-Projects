@@ -9,17 +9,49 @@
 //     'rgb(200, 150, 100)'
 // ];
 
-var colors = generateRandomColors(6);
+var colors = generateRandomColors(numberOfSquares);
 var squares = document.querySelectorAll('.square');
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById('colorDisplay');
 var messageDisplay = document.querySelector('#message');
 var headerSection = document.getElementById('header');
 var resetButton = document.querySelector('#reset');
+var easyButton = document.getElementById('easy');
+var hardButton = document.getElementById('hard');
+var numberOfSquares = 6;
+
+easyButton.addEventListener('click', function() {
+    easyButton.classList.add('selected');
+    hardButton.classList.remove('selected');
+    numberOfSquares = 3;
+    colors = generateRandomColors(numberOfSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for (var i = 0; i < squares.length; i++) {
+        if (colors[i]) {
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = 'none';
+        }
+    }
+});
+
+hardButton.addEventListener('click', function() {
+    hardButton.classList.add('selected');
+    easyButton.classList.remove('selected');
+    numberOfSquares = 6;
+    colors = generateRandomColors(numberOfSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = 'block';
+    }
+});
 
 resetButton.addEventListener('click', function() {
     // Generate all new colors;
-    colors = generateRandomColors(6);
+    colors = generateRandomColors(numberOfSquares);
     // Pick a new random color from colors Array
     pickedColor = pickColor();
     // Change colorDisplay to match picked color
@@ -30,6 +62,10 @@ resetButton.addEventListener('click', function() {
     }
     // Change the header section backgroundColor to Default
     headerSection.style.backgroundColor = '#373e48';
+    // Change the messageDisplay
+    messageDisplay.textContent = '';
+    // Set reset button back to default
+    resetButton.textContent = 'Refresh Colors';
 });
 
 colorDisplay.textContent = pickedColor;
