@@ -9,16 +9,16 @@
 //     'rgb(200, 150, 100)'
 // ];
 
-var colors = generateRandomColors(numberOfSquares);
-var squares = document.querySelectorAll('.square');
-var pickedColor = pickColor();
-var colorDisplay = document.getElementById('colorDisplay');
-var messageDisplay = document.querySelector('#message');
-var headerSection = document.getElementById('header');
-var resetButton = document.querySelector('#reset');
-var easyButton = document.getElementById('easy');
-var hardButton = document.getElementById('hard');
-var numberOfSquares = 6;
+let colors = generateRandomColors(numberOfSquares);
+const squares = document.querySelectorAll('.square');
+let pickedColor = pickColor();
+const colorDisplay = document.getElementById('colorDisplay');
+const messageDisplay = document.querySelector('#message');
+const headerSection = document.getElementById('header');
+const resetButton = document.querySelector('#reset');
+const easyButton = document.getElementById('easy');
+const hardButton = document.getElementById('hard');
+let numberOfSquares = 6;
 
 easyButton.addEventListener('click', function() {
 	easyButton.classList.add('selected');
@@ -27,7 +27,7 @@ easyButton.addEventListener('click', function() {
 	colors = generateRandomColors(numberOfSquares);
 	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
-	for (var i = 0; i < squares.length; i++) {
+	for (let i = 0; i < squares.length; i++) {
 		if (colors[i]) {
 			squares[i].style.backgroundColor = colors[i];
 		} else {
@@ -43,7 +43,7 @@ hardButton.addEventListener('click', function() {
 	colors = generateRandomColors(numberOfSquares);
 	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
-	for (var i = 0; i < squares.length; i++) {
+	for (let i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = colors[i];
 		squares[i].style.display = 'block';
 	}
@@ -57,7 +57,7 @@ resetButton.addEventListener('click', function() {
 	// Change colorDisplay to match picked color
 	colorDisplay.textContent = pickedColor;
 	// Change colors of each square
-	for (var i = 0; i < squares.length; i++) {
+	for (let i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = colors[i];
 	}
 	// Change the header section backgroundColor to Default
@@ -70,7 +70,7 @@ resetButton.addEventListener('click', function() {
 
 colorDisplay.textContent = pickedColor;
 
-for (var i = 0; i < squares.length; i++) {
+for (let i = 0; i < squares.length; i++) {
 	// Add initial colors to the squares
 	squares[i].style.backgroundColor = colors[i];
 
@@ -80,7 +80,7 @@ for (var i = 0; i < squares.length; i++) {
 
 		// Grab the color picked
 		// alert(this.style.backgroundColor);
-		var clickedColor = this.style.backgroundColor;
+		const clickedColor = this.style.backgroundColor;
 
 		// Compare clickedColor to pickedColor
 		if (clickedColor === pickedColor) {
@@ -99,7 +99,7 @@ for (var i = 0; i < squares.length; i++) {
 
 function changeColors(color) {
 	// Loop through all squares
-	for (var i = 0; i < squares.length; i++) {
+	for (let i = 0; i < squares.length; i++) {
 		// Change each color to match given color
 		squares[i].style.backgroundColor = color;
 	}
@@ -107,16 +107,16 @@ function changeColors(color) {
 
 function pickColor() {
 	// Pick a random number
-	var random = Math.floor(Math.random() * colors.length);
+	const random = Math.floor(Math.random() * colors.length);
 	// Use the number to access the color out of the Colors Array.
 	return colors[random];
 }
 
 function generateRandomColors(num) {
 	// Make an Array
-	var arr = [];
+	const arr = [];
 	// Add num random colors to Array
-	for (var i = 0; i < num; i++) {
+	for (let i = 0; i < num; i++) {
 		arr.push(randomColor());
 	}
 	// Return the Array
@@ -125,13 +125,13 @@ function generateRandomColors(num) {
 
 function randomColor() {
 	// Pick a "red" from 0 to 255
-	var red = Math.floor(Math.random() * 256);
+	const red = Math.floor(Math.random() * 256);
 	// Pick a "green" from 0 to 255
-	var green = Math.floor(Math.random() * 256);
+	const green = Math.floor(Math.random() * 256);
 	// Pick a "blue" from 0 to 255
-	var blue = Math.floor(Math.random() * 256);
+	const blue = Math.floor(Math.random() * 256);
 	// random rgb color
-	var rgbColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+	const rgbColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 	// Return random rgb color
 	return rgbColor;
 }

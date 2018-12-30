@@ -1,8 +1,8 @@
 // alert('CONNECTED');
 
-var allLi = document.querySelectorAll('li');
+const allLi = document.querySelectorAll('li');
 
-for (var i = 0; i < allLi.length; i++) {
+for (let i = 0; i < allLi.length; i++) {
 	allLi[i].addEventListener('mouseover', function() {
 		// console.log('mouse over');
 		this.classList.add('selected-class');

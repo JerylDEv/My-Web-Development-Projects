@@ -1,16 +1,16 @@
-var p1Score = 0;
-var p2Score = 0;
+let p1Score = 0;
+let p2Score = 0;
 
-var p1ScoreTally = document.querySelector('#player-1-score-display');
-var p2ScoreTally = document.querySelector('#player-2-score-display');
+const p1ScoreTally = document.querySelector('#player-1-score-display');
+const p2ScoreTally = document.querySelector('#player-2-score-display');
 
-var gameOver = false;
-var winningScore = 5;
+let gameOver = false;
+let winningScore = 5;
 
-var numInput = document.querySelector('#play-to-number');
-var winningScoreDisplay = document.querySelector('#number-of-play');
+const numInput = document.querySelector('#play-to-number');
+const winningScoreDisplay = document.querySelector('#number-of-play');
 
-var p1ScoreButton = document.querySelector('#player-1-add-score');
+const p1ScoreButton = document.querySelector('#player-1-add-score');
 p1ScoreButton.addEventListener('click', function() {
 	if (!gameOver && winningScore !== 0) {
 		p1Score++;
@@ -22,7 +22,7 @@ p1ScoreButton.addEventListener('click', function() {
 	}
 });
 
-var p2ScoreButton = document.querySelector('#player-2-add-score');
+const p2ScoreButton = document.querySelector('#player-2-add-score');
 p2ScoreButton.addEventListener('click', function() {
 	if (!gameOver && winningScore !== 0) {
 		p2Score++;
@@ -34,7 +34,7 @@ p2ScoreButton.addEventListener('click', function() {
 	}
 });
 
-var resetButton = document.querySelector('#reset-score');
+const resetButton = document.querySelector('#reset-score');
 resetButton.addEventListener('click', function() {
 	reset();
 });
